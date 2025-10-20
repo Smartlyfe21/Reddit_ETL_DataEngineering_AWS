@@ -1,0 +1,41 @@
+# Python & Virtual Environment
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+.env
+
+# IDEs & OS Files
+.idea/
+.vscode/
+.DS_Store
+
+# Logs & Temp Data
+logs/
+*.log
+
+# Airflow & Docker
+airflow_home/
+*.db
+*.pid
+*.sock
+*.lock
+*.log
+config.conf
+airflow.env
+
+# Data Folders
+data/
+*.csv
+*.parquet
+*.json
+
+# Cache & Others
+__cache__/
+tmp/
+config/config.conf
+.venv/
+__pycache__/
+logs/
+data/output/
