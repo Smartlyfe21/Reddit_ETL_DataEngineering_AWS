@@ -58,28 +58,28 @@ RedditDataEngineering/
 ## 🚀 Visual Pipeline Diagram
 
 +-----------------+
-| Reddit API |
-| (PRAW) |
+|   Reddit API    |
+|   (PRAW)        |
 +--------+--------+
-|
-v
+         |
+         v
 +-----------------+
-| ETL Scripts |
-| (Extraction, |
-| Transformation,|
-| Loading) |
+|   ETL Scripts   |
+|  (Extraction,   |
+|  Transformation,|
+|  Loading)       |
 +--------+--------+
-|
-v
+         |
+         v
 +-----------------+
-| AWS S3 Bucket |
-| (Processed CSV)|
+|   AWS S3 Bucket |
+|  (Processed CSV)|
 +--------+--------+
-|
-v
+         |
+         v
 +-----------------+
-| Apache Airflow |
-| DAG Scheduler |
+| Apache Airflow  |
+|   DAG Scheduler |
 +-----------------+
 
 **Explanation:**
