@@ -56,16 +56,14 @@ RedditDataEngineering/
 **Note:** Sensitive files like `config/config.conf`, `.venv/`, `logs/`, `__pycache__/`, and `data/output/` are excluded via `.gitignore`.
 
 ---
-
-## 🚀 Visual Pipeline Diagram
-
-```mermaid
 flowchart TD
-    A[🟥 Reddit API (PRAW)] --> B[🔄 ETL Scripts (Extraction, Transformation, Loading)]
-    B --> C[📂 Local CSV Storage (data/output/)]
-    C --> D[☁️ AWS S3 Bucket]
-    D --> E[⏱️ Airflow DAGs Orchestration & Scheduling]
-    E --> F[📊 Monitoring & Logging]
+    A[Reddit API (PRAW)] --> B[ETL Scripts (Extraction, Transformation, Loading)]
+    B --> C[Local CSV Storage (data/output/)]
+    C --> D[AWS S3 Bucket]
+    D --> E[Airflow DAGs Orchestration & Scheduling]
+    E --> F[Monitoring & Logging]
+
+
 Explanation:
 🟥 Reddit API fetches posts using PRAW
 🔄 ETL scripts clean, transform, and prepare the data
