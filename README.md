@@ -16,19 +16,17 @@ This repository contains a complete end-to-end ETL pipeline that extracts Reddit
 
 ## 🔹 Key Features
 
-- 📝 Extracts Reddit posts using PRAW (Python Reddit API Wrapper)
-- 🔄 ETL pipeline for transforming and cleaning Reddit data
-- ☁️ Uploads processed data to AWS S3
-- ⏱️ Uses Airflow DAGs for scheduling and orchestration
-- 🐳 Dockerized environment for easy deployment
-- 🔐 Full integration with AWS services: S3, IAM, EC2, Glue Crawlers, CloudWatch
-- ⚙️ Configurable via a single `config.conf` file
+- 📝 Extracts Reddit posts using PRAW (Python Reddit API Wrapper)  
+- 🔄 ETL pipeline for transforming and cleaning Reddit data  
+- ☁️ Uploads processed data to AWS S3  
+- ⏱️ Uses Airflow DAGs for scheduling and orchestration  
+- 🐳 Dockerized environment for easy deployment  
+- 🔐 Full integration with AWS services: S3, IAM, EC2, Glue Crawlers, CloudWatch  
+- ⚙️ Configurable via a single `config.conf` file  
 
 ---
 
 ## 📂 Repository Structure
-
-
 
 RedditDataEngineering/
 ├── dags/ Airflow DAGs and ETL scripts
@@ -55,32 +53,58 @@ RedditDataEngineering/
 
 **Note:** Sensitive files like `config/config.conf`, `.venv/`, `logs/`, `__pycache__/`, and `data/output/` are excluded via `.gitignore`.
 
-```markdown
+---
+
 ## 🚀 Visual Pipeline Diagram
 
-```mermaid
-flowchart TD
-    A[Reddit API (PRAW)] --> B[ETL Scripts (Extraction, Transformation, Loading)]
-    B --> C[Local CSV Storage (data/output/)]
-    C --> D[AWS S3 Bucket]
-    D --> E[Airflow DAGs Orchestration & Scheduling]
-    E --> F[Monitoring & Logging]
++-----------------+
+| Reddit API |
+| (PRAW) |
++--------+--------+
+|
+v
++-----------------+
+| ETL Scripts |
+| (Extraction, |
+| Transformation,|
+| Loading) |
++--------+--------+
+|
+v
++-----------------+
+| AWS S3 Bucket |
+| (Processed CSV)|
++--------+--------+
+|
+v
++-----------------+
+| Apache Airflow |
+| DAG Scheduler |
++-----------------+
 
-Explanation:
-🟥 Reddit API fetches posts using PRAW
-🔄 ETL scripts clean, transform, and prepare the data
-☁️ Data is uploaded to AWS S3 bucket
-⏱️ Airflow orchestrates, schedules, and monitors the ETL pipeline
-🐳 Running the Project
-Start Docker Compose:
+**Explanation:**
+
+- 🟥 Reddit API fetches posts using PRAW  
+- 🔄 ETL scripts clean, transform, and prepare the data  
+- ☁️ Data is uploaded to AWS S3 bucket  
+- ⏱️ Airflow orchestrates, schedules, and monitors the ETL pipeline  
+
+---
+
+## 🐳 Running the Project
+
+1. **Start Docker Compose**
+```bash
 docker-compose up -d
-Access Airflow Web UI:
+
+Access Airflow Web UI
 Open your browser: http://localhost:8080
 DAGs are available under Reddit ETL Pipeline
 Trigger manually or wait for scheduled runs
-Monitor Logs & Output:
+Monitor Logs & Output
 Processed CSVs saved to data/output/
 Automatically uploaded to your AWS S3 bucket
+
 📦 Python Dependencies
 pandas – Data manipulation
 boto3 – AWS S3 integration
@@ -89,6 +113,6 @@ apache-airflow – Workflow orchestration
 python-dotenv – Environment variable management
 Install all dependencies:
 pip install -r requirements.txt
+
 📝 License
 MIT License
-
